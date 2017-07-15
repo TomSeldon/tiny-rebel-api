@@ -13,5 +13,8 @@
     "beer"
   ],
   "author": "Tom Seldon <tom@tomseldon.co.uk>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "tiny-rebel-web-scraper": "^1.0.3"
+  }
 }
