@@ -16,9 +16,16 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  getDrinks:
-    handler: handler.getDrinks
+  getDrinksForBarLocation:
+    handler: handler.getDrinksForBarLocation
     events:
       - http:
           path: /{barLocation}/drinks
+          method: get
+
+  getDrinksForAllLocations:
+    handler: handler.getDrinksForAllLocations
+    events:
+      - http:
+          path: /drinks
           method: get
