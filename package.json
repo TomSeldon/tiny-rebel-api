@@ -1,20 +1,15 @@
 {
-  "name": "tiny-rebel-api",
-  "version": "0.0.0",
-  "description": "API for retrieving available beers from Tiny Rebel bars",
-  "main": "handler.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "tiny",
-    "rebel",
-    "api",
-    "beer"
-  ],
-  "author": "Tom Seldon <tom@tomseldon.co.uk>",
-  "license": "ISC",
-  "dependencies": {
-    "tiny-rebel-web-scraper": "^1.0.3"
-  }
+    "name": "tiny-rebel-api",
+    "version": "0.0.0",
+    "description": "API for retrieving available beers from Tiny Rebel bars",
+    "main": "handler.js",
+    "scripts": {
+        "test": "echo \"No test specified\" && exit 0"
+    },
+    "keywords": ["tiny", "rebel", "api", "beer"],
+    "author": "Tom Seldon <tom@tomseldon.co.uk>",
+    "license": "ISC",
+    "dependencies": {
+        "tiny-rebel-web-scraper": "^1.0.3"
+    }
 }
