@@ -1,0 +1,28 @@
+{
+    "session": {
+        "sessionId": "SessionId.c8c94866-b537-4913-92bb-243f7bf5faaf",
+        "application": {
+            "applicationId": "amzn1.ask.skill.01627d10-ac12-4e6b-a88c-c435af291e74"
+        },
+        "attributes": {},
+        "user": {
+            "userId": "SOME_USER_ID"
+        },
+        "new": true
+    },
+    "request": {
+        "type": "IntentRequest",
+        "requestId": "EdwRequestId.65704d4c-50e0-41a2-8802-b4a983f56331",
+        "locale": "en-GB",
+        "timestamp": "2017-07-20T05:37:53Z",
+        "intent": {
+            "name": "GetCheapestDrinkAtBarIntent",
+            "slots": {
+                "BarLocation": {
+                    "name": "BarLocation"
+                }
+            }
+        }
+    },
+    "version": "1.0"
+}
