@@ -7,10 +7,13 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "invoke-local-get-cheapest": "serverless invoke local --function handler --path ./events/get-cheapest-cardiff.json",
         "invoke-local-get-cheapest-no-bar": "serverless invoke local --function handler --path ./events/get-cheapest-no-bar.json",
+        "invoke-get-cheapest": "serverless invoke --function handler --path ./events/get-cheapest-cardiff.json",
         "invoke-local-get-strongest": "serverless invoke local --function handler --path ./events/get-strongest-cardiff.json",
         "invoke-local-get-strongest-no-bar": "serverless invoke local --function handler --path ./events/get-strongest-no-bar.json",
+        "invoke-get-strongest": "serverless invoke --function handler --path ./events/get-strongest-newport.json",
         "invoke-local-suggest-drink": "serverless invoke local --function handler --path ./events/get-drink-suggestion.json",
         "invoke-local-suggest-drink-no-bar": "serverless invoke local --function handler --path ./events/get-drink-suggestion-no-bar.json",
+        "invoke-suggest-drink": "serverless invoke --function handler --path ./events/get-drink-suggestion.json",
         "tail-remote-logs": "serverless logs --function handler -t"
     },
     "author": "Tom Seldon <tom@tomseldon.co.uk>",
