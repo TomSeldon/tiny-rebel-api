@@ -11,7 +11,9 @@ module.exports = function() {
 
     if (!hasSpecifiedBarLocation) {
         const speechOutput = 'Which bar would you like me to check?';
-        const repromptSpeech = 'Please say Cardiff or Newport.';
+        const repromptSpeech =
+            'Please say <emphasis level="moderate">Cardiff</emphasis> ' +
+            'or <emphasis level="moderate">Newport.</emphasis>';
         const updatedIntent = intent;
 
         this.emit(
@@ -33,7 +35,9 @@ module.exports = function() {
 
                 this.emit(
                     ':tell',
-                    `The cheapest drink on tap at Tiny Rebel ${barLocation} is ${cheapestBeer.name}, which is ${cheapestBeer.formattedPrice}`
+                    `The cheapest drink on tap at Tiny Rebel ${barLocation} is ` +
+                        `<emphasis level="moderate">${cheapestBeer.name}</emphasis>, ` +
+                        `which is ${cheapestBeer.formattedPrice}`
                 );
             })
             .catch(error => {
