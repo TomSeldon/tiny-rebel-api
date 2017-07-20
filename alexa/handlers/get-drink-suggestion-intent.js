@@ -2,6 +2,8 @@
 
 const tinyRebelWebScraper = require('tiny-rebel-web-scraper');
 
+const sentanceStarters = ['How about trying', 'You might like', 'Why not try'];
+
 module.exports = function() {
     const barLocationSlot = 'BarLocation';
     const intent = this.event.request.intent;
@@ -28,10 +30,14 @@ module.exports = function() {
             .getAllDrinks(barLocation.toLowerCase())
             .then(drinks => {
                 const drink = drinks[Math.floor(Math.random() * drinks.length)];
+                const sentanceStarter =
+                    sentanceStarters[
+                        Math.floor(Math.random() * sentanceStarters.length)
+                    ];
 
                 this.emit(
                     ':tell',
-                    `How about trying ${drink.name}, which is a ${drink.formattedAbv} ${drink.style} and costs ${drink.formattedPrice} for a ${drink.quantity}`
+                    `${sentanceStarter} ${drink.name}, which is a ${drink.formattedAbv} ${drink.style} and costs ${drink.formattedPrice} for a ${drink.quantity}`
                 );
             })
             .catch(error => {
