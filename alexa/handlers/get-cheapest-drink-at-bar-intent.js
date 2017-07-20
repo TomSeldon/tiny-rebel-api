@@ -3,37 +3,47 @@
 const tinyRebelWebScraper = require('tiny-rebel-web-scraper');
 
 module.exports = function() {
-    const barLocation = this.event.request.intent.slots.BarLocation.value;
+    const barLocationSlot = 'BarLocation';
+    const intent = this.event.request.intent;
+    const hasSpecifiedBarLocation = Boolean(
+        intent.slots[barLocationSlot].value
+    );
 
-    if (!barLocation) {
+    if (!hasSpecifiedBarLocation) {
+        const speechOutput = 'Which bar would you like me to check?';
+        const repromptSpeech = 'Please say Cardiff or Newport.';
+        const updatedIntent = intent;
+
         this.emit(
-            ':tell',
-            `Sorry, I can't answer that unless you tell me which location you'd like me to check. ` +
-                `Please ask again, but specify if you want me to check in Cardiff or Newport.`,
-            'You need to specify a bar location. Ask again, specifying either Cardiff or Newport.'
+            ':elicitSlot',
+            barLocationSlot,
+            speechOutput,
+            repromptSpeech,
+            updatedIntent
         );
-        return;
-    }
+    } else {
+        const barLocation = intent.slots[barLocationSlot].value;
 
-    tinyRebelWebScraper
-        .getAllDrinks(barLocation.toLowerCase())
-        .then(drinks => {
-            const cheapestBeer = drinks.reduce((previous, current) => {
-                return previous.price < current.price ? previous : current;
+        tinyRebelWebScraper
+            .getAllDrinks(barLocation.toLowerCase())
+            .then(drinks => {
+                const cheapestBeer = drinks.reduce((previous, current) => {
+                    return previous.price < current.price ? previous : current;
+                });
+
+                this.emit(
+                    ':tell',
+                    `The cheapest drink on tap at Tiny Rebel ${barLocation} is ${cheapestBeer.name}, which is ${cheapestBeer.formattedPrice}`
+                );
+            })
+            .catch(error => {
+                console.error(error);
+
+                this.emit(
+                    ':tell',
+                    'Sorry, I was unable to get beer information. Please try again later',
+                    'Unable to get beer information'
+                );
             });
-
-            this.emit(
-                ':tell',
-                `The cheapest drink on tap at Tiny Rebel ${barLocation} is ${cheapestBeer.name}, which is ${cheapestBeer.formattedPrice}`
-            );
-        })
-        .catch(error => {
-            console.error(error);
-
-            this.emit(
-                ':tell',
-                'Sorry, I was unable to get beer information. Please try again later',
-                'Unable to get beer information'
-            );
-        });
+    }
 };
