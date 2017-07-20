@@ -13,7 +13,9 @@ module.exports = function() {
 
     if (!hasSpecifiedBarLocation) {
         const speechOutput = 'Which bar would you like me to check?';
-        const repromptSpeech = 'Please say Cardiff or Newport.';
+        const repromptSpeech =
+            'Please say <emphasis level="moderate">Cardiff</emphasis> ' +
+            'or <emphasis level="moderate">Newport.</emphasis>';
         const updatedIntent = intent;
 
         this.emit(
@@ -35,9 +37,16 @@ module.exports = function() {
                         Math.floor(Math.random() * sentanceStarters.length)
                     ];
 
+                /*
+                    Output something like:
+
+                    > You might like "Juicy", which is a 4.8% Pale Ale and costs £3.30 for a pint
+                 */
                 this.emit(
                     ':tell',
-                    `${sentanceStarter} ${drink.name}, which is a ${drink.formattedAbv} ${drink.style} and costs ${drink.formattedPrice} for a ${drink.quantity}`
+                    `${sentanceStarter} <emphasis level="moderate">${drink.name}</emphasis>, ` +
+                        `which is a ${drink.formattedAbv} ${drink.style} and costs ` +
+                        `${drink.formattedPrice} for a ${drink.quantity}`
                 );
             })
             .catch(error => {
