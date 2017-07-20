@@ -1,0 +1,28 @@
+{
+    "session": {
+        "sessionId": "SessionId.d860661b-3cca-44de-bdd0-b3ff59609305",
+        "application": {
+            "applicationId": "amzn1.ask.skill.01627d10-ac12-4e6b-a88c-c435af291e74"
+        },
+        "attributes": {},
+        "user": {
+            "userId": "SOME_USER_ID"
+        },
+        "new": false
+    },
+    "request": {
+        "type": "IntentRequest",
+        "requestId": "EdwRequestId.046f400f-4fe0-4c6a-89af-f2c9b72ad7a1",
+        "locale": "en-GB",
+        "timestamp": "2017-07-20T06:40:52Z",
+        "intent": {
+            "name": "GetDrinkSuggestionIntent",
+            "slots": {
+                "BarLocation": {
+                    "name": "BarLocation"
+                }
+            }
+        }
+    },
+    "version": "1.0"
+}
