@@ -6,6 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "invoke-local-get-cheapest": "serverless invoke local --function handler --path ./events/get-cheapest-cardiff.json",
+        "invoke-local-get-cheapest-no-bar": "serverless invoke local --function handler --path ./events/get-cheapest-no-bar.json",
         "invoke-local-get-strongest": "serverless invoke local --function handler --path ./events/get-strongest-cardiff.json",
         "invoke-local-suggest-drink": "serverless invoke local --function handler --path ./events/get-drink-suggestion.json",
         "invoke-local-suggest-drink-no-bar": "serverless invoke local --function handler --path ./events/get-drink-suggestion-no-bar.json",
