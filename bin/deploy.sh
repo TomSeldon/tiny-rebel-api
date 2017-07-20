@@ -5,4 +5,10 @@ set -u
 
 npm install -g serverless@1.17.0
 
-serverless deploy
+echo "Deploying Alexa skill"
+cd alexa
+serverless deploy --verbose
+
+echo "Deploying API"
+cd ../api
+serverless deploy --verbose

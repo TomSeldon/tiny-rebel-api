@@ -6,10 +6,16 @@
     "scripts": {
         "test": "echo \"No test specified\" && exit 0"
     },
-    "keywords": ["tiny", "rebel", "api", "beer"],
+    "keywords": [
+        "tiny",
+        "rebel",
+        "api",
+        "beer"
+    ],
     "author": "Tom Seldon <tom@tomseldon.co.uk>",
     "license": "ISC",
     "dependencies": {
+        "alexa-sdk": "^1.0.11",
         "tiny-rebel-web-scraper": "^1.0.3"
     }
 }

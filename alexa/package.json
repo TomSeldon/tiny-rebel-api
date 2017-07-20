@@ -1,0 +1,13 @@
+{
+    "name": "tiny-rebel-alexa",
+    "version": "1.0.0",
+    "description": "",
+    "main": "handler.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "invoke-local-get-cheapest": "serverless invoke local --function handler --path ./events/get-cheapest-cardiff.json",
+        "invoke-local-get-strongest": "serverless invoke local --function handler --path ./events/get-strongest-cardiff.json"
+    },
+    "author": "Tom Seldon <tom@tomseldon.co.uk>",
+    "license": "ISC"
+}
