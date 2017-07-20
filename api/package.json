@@ -4,9 +4,10 @@
     "description": "",
     "main": "handler.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "./test/test-local-invocation.sh",
         "invoke-local-get-drinks-cardiff": "serverless invoke local --function getDrinksForBarLocation --path ./events/get-drinks-cardiff.json",
-        "invoke-local-get-drinks-newport": "serverless invoke local --function getDrinksForBarLocation --path ./events/get-drinks-newport.json"
+        "invoke-local-get-drinks-newport": "serverless invoke local --function getDrinksForBarLocation --path ./events/get-drinks-newport.json",
+        "invoke-local-get-drinks-all": "serverless invoke local --function getDrinksForAllLocations"
     },
     "author": "Tom Seldon <tom@tomseldon.co.uk>",
     "license": "ISC"

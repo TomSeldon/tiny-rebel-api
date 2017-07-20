@@ -3,7 +3,7 @@
 set -e
 set -u
 
-npm install -g serverless@1.17.0
+npm install -g serverless@$SERVERLESS_FRAMEWORK_VERSION
 
 echo "Deploying Alexa skill"
 cd alexa

@@ -4,14 +4,9 @@
     "description": "API for retrieving available beers from Tiny Rebel bars",
     "main": "handler.js",
     "scripts": {
-        "test": "echo \"No test specified\" && exit 0"
+        "test": "./bin/test.sh"
     },
-    "keywords": [
-        "tiny",
-        "rebel",
-        "api",
-        "beer"
-    ],
+    "keywords": ["tiny", "rebel", "api", "beer"],
     "author": "Tom Seldon <tom@tomseldon.co.uk>",
     "license": "ISC",
     "dependencies": {
