@@ -1,0 +1,17 @@
+service: tiny-rebel-alexa-skill
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: prod
+  region: eu-west-1
+
+package:
+ include:
+   - ../node_modules/**
+
+functions:
+  handler:
+    handler: handler.handler
+    events:
+      - alexaSkill
