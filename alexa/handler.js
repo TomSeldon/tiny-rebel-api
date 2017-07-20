@@ -4,7 +4,8 @@ const Alexa = require('alexa-sdk');
 
 const handlers = {
     GetCheapestDrinkAtBarIntent: require('./handlers/get-cheapest-drink-at-bar-intent'),
-    GetStrongestDrinkAtBarIntent: require('./handlers/get-strongest-drink-at-bar-intent')
+    GetStrongestDrinkAtBarIntent: require('./handlers/get-strongest-drink-at-bar-intent'),
+    GetDrinkSuggestionIntent: require('./handlers/get-drink-suggestion-intent')
 };
 
 module.exports.handler = (event, context, callbaxck) => {
