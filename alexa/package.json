@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "invoke-local-get-cheapest": "serverless invoke local --function handler --path ./events/get-cheapest-cardiff.json",
         "invoke-local-get-strongest": "serverless invoke local --function handler --path ./events/get-strongest-cardiff.json",
-        "invoke-local-suggest-drink": "serverless invoke local --function handler --path ./events/get-drink-suggestion.json"
+        "invoke-local-suggest-drink": "serverless invoke local --function handler --path ./events/get-drink-suggestion.json",
+        "tail-remote-logs": "serverless logs --function handler -t"
     },
     "author": "Tom Seldon <tom@tomseldon.co.uk>",
     "license": "ISC"
