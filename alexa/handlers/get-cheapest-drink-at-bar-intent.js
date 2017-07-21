@@ -16,41 +16,41 @@ module.exports = function() {
         const repromptSpeech = speechOutput;
         const updatedIntent = intent;
 
-        this.emit(
+        return this.emit(
             ':elicitSlot',
             barLocationSlot,
             speechOutput,
             repromptSpeech,
             updatedIntent
         );
-    } else {
-        const barLocation = intent.slots[barLocationSlot].value;
-
-        tinyRebelWebScraper
-            .getAllDrinks(barLocation.toLowerCase())
-            .then(drinks => {
-                const cheapestBeer = drinks.reduce((previous, current) => {
-                    return previous.price < current.price ? previous : current;
-                });
-                const drinkName = abbreviateSpeech(cheapestBeer.name);
-                const drinkStyle = abbreviateSpeech(cheapestBeer.style);
-
-                this.emit(
-                    ':tell',
-                    `The cheapest drink on tap at Tiny Rebel ${barLocation} is ` +
-                        `<emphasis level="moderate">${drinkName}</emphasis>, ` +
-                        `which is a ${cheapestBeer.formattedAbv} ${drinkStyle} and costs ` +
-                        `${cheapestBeer.formattedPrice} for a ${cheapestBeer.quantity}`
-                );
-            })
-            .catch(error => {
-                console.error(error);
-
-                this.emit(
-                    ':tell',
-                    'Sorry, I was unable to get beer information. Please try again later',
-                    'Unable to get beer information'
-                );
-            });
     }
+
+    const barLocation = intent.slots[barLocationSlot].value;
+
+    tinyRebelWebScraper
+        .getAllDrinks(barLocation.toLowerCase())
+        .then(drinks => {
+            const cheapestBeer = drinks.reduce((previous, current) => {
+                return previous.price < current.price ? previous : current;
+            });
+            const drinkName = abbreviateSpeech(cheapestBeer.name);
+            const drinkStyle = abbreviateSpeech(cheapestBeer.style);
+
+            this.emit(
+                ':tell',
+                `The cheapest drink on tap at Tiny Rebel ${barLocation} is ` +
+                    `<emphasis level="moderate">${drinkName}</emphasis>, ` +
+                    `which is a ${cheapestBeer.formattedAbv} ${drinkStyle} and costs ` +
+                    `${cheapestBeer.formattedPrice} for a ${cheapestBeer.quantity}`
+            );
+        })
+        .catch(error => {
+            console.error(error);
+
+            this.emit(
+                ':tell',
+                'Sorry, I was unable to get beer information. Please try again later',
+                'Unable to get beer information'
+            );
+        });
 };
