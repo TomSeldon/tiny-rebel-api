@@ -41,8 +41,8 @@ module.exports = function() {
                 ':tell',
                 `The strongest drink on tap at Tiny Rebel ${barLocation} is ` +
                     `<emphasis level="moderate">${drinkName}</emphasis>, ` +
-                    `which is a ${strongestBeer.formattedAbv} ${drinkStyle} and costs ` +
-                    `${strongestBeer.formattedPrice} for a ${strongestBeer.quantity}`
+                    `which is a ${strongestBeer.formattedAbv} ${drinkStyle}, and costs ` +
+                    `${strongestBeer.formattedPrice} for a ${strongestBeer.quantity}.`
             );
         })
         .catch(error => {

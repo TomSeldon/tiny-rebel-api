@@ -40,8 +40,8 @@ module.exports = function() {
                 ':tell',
                 `The cheapest drink on tap at Tiny Rebel ${barLocation} is ` +
                     `<emphasis level="moderate">${drinkName}</emphasis>, ` +
-                    `which is a ${cheapestBeer.formattedAbv} ${drinkStyle} and costs ` +
-                    `${cheapestBeer.formattedPrice} for a ${cheapestBeer.quantity}`
+                    `which is a ${cheapestBeer.formattedAbv} ${drinkStyle}, and costs ` +
+                    `${cheapestBeer.formattedPrice} for a ${cheapestBeer.quantity}.`
             );
         })
         .catch(error => {

@@ -48,8 +48,8 @@ module.exports = function() {
             this.emit(
                 ':tell',
                 `${sentanceStarter} <emphasis level="moderate">${drinkName}</emphasis>, ` +
-                    `which is a ${drink.formattedAbv} ${drinkStyle} and costs ` +
-                    `${drink.formattedPrice} for a ${drink.quantity}`
+                    `which is a ${drink.formattedAbv} ${drinkStyle}, and costs ` +
+                    `${drink.formattedPrice} for a ${drink.quantity}.`
             );
         })
         .catch(error => {
