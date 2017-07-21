@@ -9,8 +9,10 @@ const handlers = {
     LaunchRequest: require('./handlers/launch-request')
 };
 
-module.exports.handler = (event, context, callbaxck) => {
-    const alexa = Alexa.handler(event, context);
+module.exports.handler = (event, context, callback) => {
+    const alexa = Alexa.handler(event, context, callback);
+
+    alexa.APP_ID = 'amzn1.ask.skill.01627d10-ac12-4e6b-a88c-c435af291e74';
 
     alexa.registerHandlers(handlers);
     alexa.execute();
