@@ -14,8 +14,7 @@ module.exports = function() {
     );
 
     if (!hasSpecifiedBarLocation) {
-        const speechOutput =
-            'Which bar would you like me to check? I can check at either Cardiff or Newport.';
+        const speechOutput = 'Would you like me to check Cardiff or Newport?';
         const repromptSpeech = speechOutput;
         const updatedIntent = intent;
 
