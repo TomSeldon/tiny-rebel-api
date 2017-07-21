@@ -7,6 +7,9 @@ set -e
 # This doesn't guard against everything, but at least catches issues where
 # the function is broken.
 
+echo "\n\nTesting: Launch request"
+npm run invoke-local-launch-request
+
 echo "\n\nTesting: Get cheapest drink"
 npm run invoke-local-get-cheapest
 npm run invoke-local-get-cheapest-no-bar

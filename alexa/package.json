@@ -5,6 +5,8 @@
     "main": "handler.js",
     "scripts": {
         "test": "./test/test-local-invocation.sh",
+        "invoke-local-launch-request": "serverless invoke local --function handler --path ./events/launch.json",
+        "invoke-launch-request": "serverless invoke --function handler --path ./events/launch.json",
         "invoke-local-get-cheapest": "serverless invoke local --function handler --path ./events/get-cheapest-cardiff.json",
         "invoke-local-get-cheapest-no-bar": "serverless invoke local --function handler --path ./events/get-cheapest-no-bar.json",
         "invoke-get-cheapest": "serverless invoke --function handler --path ./events/get-cheapest-cardiff.json",
