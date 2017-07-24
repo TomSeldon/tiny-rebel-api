@@ -7,7 +7,10 @@ const handlers = {
     GetStrongestDrinkAtBarIntent: require('./handlers/get-strongest-drink-at-bar-intent'),
     GetDrinkSuggestionIntent: require('./handlers/get-drink-suggestion-intent'),
     LaunchRequest: require('./handlers/launch-request'),
-    'AMAZON.HelpIntent': require('./handlers/help-intent')
+    'AMAZON.HelpIntent': require('./handlers/help-intent'),
+    'AMAZON.CancelIntent': require('./handlers/exit-handler'),
+    'AMAZON.StopIntent': require('./handlers/exit-handler'),
+    Unhandled: require('./handlers/unhandled-intent')
 };
 
 module.exports.handler = (event, context, callback) => {
