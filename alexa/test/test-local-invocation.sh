@@ -10,6 +10,12 @@ set -e
 echo "\n\nTesting: Launch request"
 npm run invoke-local-launch-request
 
+echo "\n\nTesting: Help"
+npm run invoke-local-help
+
+echo "\n\nTesting: Unhandled"
+npm run invoke-local-unhandled-intent
+
 echo "\n\nTesting: Get cheapest drink"
 npm run invoke-local-get-cheapest
 npm run invoke-local-get-cheapest-no-bar
